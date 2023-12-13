@@ -24,15 +24,12 @@ const ParkingDistance = ({ handleSubmit, state, setState }) => {
             </span>
           </h2>
           <h2 className="mt-3 text-xs font-normal">
-            Please estimate the distance (new address)
+            Please estimate the distance (current address)
           </h2>
 
           <div className="mt-8 text-left">
             {/* a label */}
-            <label
-              htmlFor="new_parking_distance"
-              className="text-xs font-semibold"
-            >
+            <label htmlFor="parking_distance" className="text-xs font-semibold">
               Distance between the truck parking lot and the house entrance in
               meters
             </label>
@@ -40,12 +37,12 @@ const ParkingDistance = ({ handleSubmit, state, setState }) => {
             <br />
 
             <span className="block w-full -mt-5 text-center">
-              {state?.new_parking_distance}
+              {state?.parking_distance}
             </span>
             <input
               type="range"
-              name="new_parking_distance"
-              value={state?.new_parking_distance}
+              name="parking_distance"
+              value={state?.parking_distance}
               onChange={handleChange}
               className="w-full px-4 py-2 -mt-2 text-xs text-gray-700 border rounded-md focus:border-gray-800 focus:outline-none"
               max={100}

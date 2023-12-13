@@ -24,7 +24,7 @@ const ParkingDistance = ({ handleSubmit, state, setState }) => {
             </span>
           </h2>
           <h2 className="mt-3 text-xs font-normal">
-            Please estimate the distance (new address)
+            Please estimate the distance (collection address)
           </h2>
 
           <div className="mt-8 text-left">

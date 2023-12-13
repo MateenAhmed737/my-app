@@ -7,7 +7,7 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
     setState("details", newState);
   };
 
-  const radioBtns = ["mister", "woman", "family", "company"];
+  const radioBtns = ["mister", "woman", "company"];
   const fields = [
     "name",
     "email",

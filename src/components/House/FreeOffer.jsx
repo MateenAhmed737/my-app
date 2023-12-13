@@ -7,7 +7,7 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
     setState("details", newState);
   };
 
-  const radioBtns = ["mister", "woman"];
+  const radioBtns = ["mister", "woman", "company"];
   const fields = [
     "name",
     "email",
@@ -30,13 +30,15 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
             <div key={item + index} className="flex items-center space-x-1">
               <input
                 type="radio"
+                id={item}
                 name="title"
                 value={item}
                 onChange={handleChange}
                 checked={state.details.title === item}
+                required
               />
               <label
-                htmlFor="title"
+                htmlFor={item}
                 className="text-xs font-medium text-gray-500 capitalize"
               >
                 {item}
@@ -76,6 +78,7 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
                   onChange={handleChange}
                   value={state.details[item]}
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-2"
+                  required
                 />
               </div>
             );
@@ -97,6 +100,7 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
             type="checkbox"
             value={state.details.terms}
             onChange={handleChange}
+            required
           />
           <label
             htmlFor="terms"

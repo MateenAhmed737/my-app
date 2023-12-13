@@ -13,6 +13,10 @@ import WithoutAssemble from "./without-assemble.png";
 import WithAssemble from "./with-assemble.png";
 import OtherRooms from "./other-rooms.png";
 import FurtherServices from "./further-services.png";
+import DetachedHouse from "./detached-house.png";
+import ApartmentBuilding from "./apartment-building.png";
+import TownHouse from "./town-house.png";
+import SemiDetachedHouse from "./semidetached-house.png";
 
 export {
   Location,
@@ -30,4 +34,8 @@ export {
   WithAssemble,
   OtherRooms,
   FurtherServices,
+  ApartmentBuilding,
+  DetachedHouse,
+  SemiDetachedHouse,
+  TownHouse
 };

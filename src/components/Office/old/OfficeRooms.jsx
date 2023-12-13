@@ -1,7 +1,7 @@
 import React from "react";
-import { ParkingDistanceImg } from "../../../assets";
+import { Plan } from "../../../assets";
 
-const ParkingDistance = ({ handleSubmit, state, setState }) => {
+const OfficeRooms = ({ handleSubmit, state, setState }) => {
   const handleChange = (e) => {
     setState(e.target.name, e.target.value);
   };
@@ -9,46 +9,36 @@ const ParkingDistance = ({ handleSubmit, state, setState }) => {
   return (
     <div className="flex flex-col items-center sm:flex-row min-h-max">
       <div className="self-center h-full sm:w-4/12 justify-self-center">
-        <img
-          className="w-full max-w-[120px] mx-auto mt-2"
-          src={ParkingDistanceImg}
-          alt="parking-distance"
-        />
+        <img className="w-full max-w-[120px] mt-2" src={Plan} alt="plan" />
       </div>
-      <div className="mt-5 sm:w-8/12">
+      <div className="mx-auto mt-5 sm:w-8/12">
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg">
-            Distance from the parking lot{" "}
-            <span className="font-semibold text-blue-700">
-              to the entrance to the house?
-            </span>
+            How many <span className="font-semibold text-blue-700">office spaces</span>{" "}
+            are there?
           </h2>
           <h2 className="mt-3 text-xs font-normal">
-            Please estimate the distance (new address)
+            Number of spaces.
           </h2>
 
           <div className="mt-8 text-left">
             {/* a label */}
-            <label
-              htmlFor="new_parking_distance"
-              className="text-xs font-semibold"
-            >
-              Distance between the truck parking lot and the house entrance in
-              meters
+            <label htmlFor="number_of_rooms" className="text-xs font-semibold">
+              Number of rooms
             </label>
             <br />
             <br />
 
             <span className="block w-full -mt-5 text-center">
-              {state?.new_parking_distance}
+              {state?.number_of_rooms}
             </span>
             <input
               type="range"
-              name="new_parking_distance"
-              value={state?.new_parking_distance}
+              name="number_of_rooms"
+              value={state?.number_of_rooms}
               onChange={handleChange}
               className="w-full px-4 py-2 -mt-2 text-xs text-gray-700 border rounded-md focus:border-gray-800 focus:outline-none"
-              max={100}
+              max={10}
               min={1}
               required
             />
@@ -59,4 +49,4 @@ const ParkingDistance = ({ handleSubmit, state, setState }) => {
   );
 };
 
-export default ParkingDistance;
+export default OfficeRooms;

@@ -34,7 +34,7 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
               }
               className={`relative pb-7 pt-1 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
                 state.assembling_furniture === "with assemble"
-                  ? "hover:!ring-gray-500 ring-gray-500"
+                  ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
             >
@@ -70,7 +70,7 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
               }
               className={`relative pb-7 pt-1 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
                 state.assembling_furniture === "without assemble"
-                  ? "hover:!ring-gray-500 ring-gray-500"
+                  ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
             >
@@ -103,7 +103,7 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
               }
               className={`relative pb-7 pt-1 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
                 state.assembling_furniture === "partialy"
-                  ? "hover:!ring-gray-500 ring-gray-500"
+                  ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
             >

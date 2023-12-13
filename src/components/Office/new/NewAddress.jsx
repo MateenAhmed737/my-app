@@ -18,7 +18,7 @@ const Address = ({ handleSubmit, state, setState }) => {
             <span className="font-semibold text-blue-700">new address</span> ?
           </h2>
           <h2 className="mt-3 text-xs font-normal">
-            Please enter an address (unloading point).
+            Please enter an address (loading point).
           </h2>
 
           <div className="mt-8">

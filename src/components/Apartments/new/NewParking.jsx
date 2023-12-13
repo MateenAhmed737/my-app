@@ -25,7 +25,7 @@ const Parking = ({ handleSubmit, state, setState }) => {
               }
               className={`relative pb-1.5 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
                 state.new_parking === "Yes"
-                  ? "hover:!ring-gray-500 ring-gray-500"
+                  ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
             >
@@ -56,7 +56,7 @@ const Parking = ({ handleSubmit, state, setState }) => {
               }
               className={`relative pb-1.5 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
                 state.new_parking === "No"
-                  ? "hover:!ring-gray-500 ring-gray-500"
+                  ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
             >

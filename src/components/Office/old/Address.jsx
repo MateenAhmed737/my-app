@@ -15,17 +15,18 @@ const Address = ({ handleSubmit, state, setState }) => {
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg whitespace-nowrap">
             What is your{" "}
-            <span className="font-semibold text-blue-700">new address</span> ?
+            <span className="font-semibold text-blue-700">current address</span>{" "}
+            ?
           </h2>
           <h2 className="mt-3 text-xs font-normal">
-            Please enter an address (unloading point).
+            Please enter an address (loading point).
           </h2>
 
           <div className="mt-8">
             <input
               type="text"
               name="address"
-              value={state?.new_address}
+              value={state?.address}
               onChange={handleChange}
               className="w-full px-4 py-2 mt-2 text-xs text-gray-700 border rounded-md focus:border-gray-800 focus:outline-none"
               placeholder="Street, house number"
@@ -35,7 +36,7 @@ const Address = ({ handleSubmit, state, setState }) => {
               type="text"
               name="postal_code"
               onChange={handleChange}
-              value={state?.new_postal_code}
+              value={state?.postal_code}
               className="w-full px-4 py-2 mt-2 text-xs text-gray-700 border rounded-md focus:border-gray-800 focus:outline-none"
               placeholder="Postal code"
               required

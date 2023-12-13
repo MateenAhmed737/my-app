@@ -25,7 +25,7 @@ const Elevator = ({ handleSubmit, state, setState }) => {
               }
               className={`relative pb-7 pt-1 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
                 state.new_elevator === "Yes"
-                  ? "hover:!ring-gray-500 ring-gray-500"
+                  ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
             >
@@ -56,7 +56,7 @@ const Elevator = ({ handleSubmit, state, setState }) => {
               }
               className={`relative pb-7 pt-1 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
                 state.new_elevator === "No"
-                  ? "hover:!ring-gray-500 ring-gray-500"
+                  ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
             >

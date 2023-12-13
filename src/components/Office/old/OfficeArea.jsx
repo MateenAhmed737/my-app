@@ -1,13 +1,13 @@
 import React from "react";
 import { House } from "../../../assets";
 
-const LivingArea = ({ handleSubmit, state, setState }) => {
+const OfficeArea = ({ handleSubmit, state, setState }) => {
   const handleChange = (e) => {
     setState(e.target.name, e.target.value);
   };
 
   return (
-    <div className="flex flex-col items-center sm:flex-row min-h-max">
+    <div className="flex flex-col items-center w-full sm:flex-row min-h-max">
       <div className="self-center h-full sm:w-4/12 justify-self-center">
         <img
           className="w-full max-w-[120px] mx-auto mt-2"
@@ -15,36 +15,34 @@ const LivingArea = ({ handleSubmit, state, setState }) => {
           alt="house"
         />
       </div>
-      <div className="mt-5 sm:w-8/12">
+      <div className="mx-auto mt-5 sm:w-8/12">
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg">
-            How big is the{" "}
-            <span className="font-semibold text-blue-700">living area</span> of
-            the apartment ?
+            Tell us your{" "}
+            <span className="font-semibold text-blue-700">office space?</span>
           </h2>
           <h2 className="mt-3 text-xs font-normal">
-            The living area refers to the sum of the eligible floor areas the
-            rooms that belong exclusively to an apartment.
+            Estimate the size of the office space.
           </h2>
 
           <div className="mt-8 text-left">
             {/* a label */}
             <label
-              htmlFor="living_area_length"
+              htmlFor="office_area_length"
               className="text-xs font-semibold"
             >
-              Length of the apartment in m²
+              Office length in sqm
             </label>
             <br />
             <br />
 
             <span className="block w-full -mt-5 text-center">
-              {state?.living_area_length}
+              {state?.office_area_length}
             </span>
             <input
               type="range"
-              name="living_area_length"
-              value={state?.living_area_length}
+              name="office_area_length"
+              value={state?.office_area_length}
               onChange={handleChange}
               className="w-full px-4 py-2 -mt-2 text-xs text-gray-700 border rounded-md focus:border-gray-800 focus:outline-none"
               max={200}
@@ -58,4 +56,4 @@ const LivingArea = ({ handleSubmit, state, setState }) => {
   );
 };
 
-export default LivingArea;
+export default OfficeArea;

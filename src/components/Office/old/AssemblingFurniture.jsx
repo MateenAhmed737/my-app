@@ -28,23 +28,23 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
                 handleChange({
                   target: {
                     value: "with assemble",
-                    name: "new_assembling_furniture",
+                    name: "assembling_furniture",
                   },
                 })
               }
               className={`relative pb-7 pt-1 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.new_assembling_furniture === "with assemble"
-                  ? "hover:!ring-gray-500 ring-gray-500"
+                state.assembling_furniture === "with assemble"
+                  ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
             >
               {/* radio button */}
               <input
                 type="radio"
-                name="new_assembling_furniture"
+                name="assembling_furniture"
                 value="with assemble"
                 onChange={handleChange}
-                checked={state.new_assembling_furniture === "with assemble"}
+                checked={state.assembling_furniture === "with assemble"}
                 className="hidden"
                 required
               />
@@ -64,23 +64,23 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
                 handleChange({
                   target: {
                     value: "without assemble",
-                    name: "new_assembling_furniture",
+                    name: "assembling_furniture",
                   },
                 })
               }
               className={`relative pb-7 pt-1 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.new_assembling_furniture === "without assemble"
-                  ? "hover:!ring-gray-500 ring-gray-500"
+                state.assembling_furniture === "without assemble"
+                  ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
             >
               {/* radio button */}
               <input
                 type="radio"
-                name="new_assembling_furniture"
+                name="assembling_furniture"
                 value="without assemble"
                 onChange={handleChange}
-                checked={state.new_assembling_furniture === "without assemble"}
+                checked={state.assembling_furniture === "without assemble"}
                 className="hidden"
                 required
               />
@@ -98,25 +98,22 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
             <div
               onClick={() =>
                 handleChange({
-                  target: {
-                    value: "partialy",
-                    name: "new_assembling_furniture",
-                  },
+                  target: { value: "partialy", name: "assembling_furniture" },
                 })
               }
               className={`relative pb-7 pt-1 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.new_assembling_furniture === "partialy"
-                  ? "hover:!ring-gray-500 ring-gray-500"
+                state.assembling_furniture === "partialy"
+                  ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
             >
               {/* radio button */}
               <input
                 type="radio"
-                name="new_assembling_furniture"
+                name="assembling_furniture"
                 value="partialy"
                 onChange={handleChange}
-                checked={state.new_assembling_furniture === "partialy"}
+                checked={state.assembling_furniture === "partialy"}
                 className="hidden"
                 required
               />
