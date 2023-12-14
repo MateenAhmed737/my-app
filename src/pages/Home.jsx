@@ -36,11 +36,7 @@ import {
   OfficeFloors,
   NewOfficeFloors,
 } from "../components/Office";
-import {
-  ApartmentsModal,
-  HouseModal,
-  OfficeModal,
-} from "../components";
+import { ApartmentsModal, HouseModal, OfficeModal } from "../components";
 
 const initialApartmentsModal = {
   isOpen: false,
@@ -65,8 +61,8 @@ const initialApartmentsModal = {
     FreeOffer,
   ],
   data: {
-    address: "karachi",
-    postal_code: "34564",
+    address: "",
+    postal_code: "",
     living_area_length: 20,
     number_of_rooms: 2,
     floor: 2,
@@ -75,8 +71,8 @@ const initialApartmentsModal = {
     elevator: "Yes",
     assembling_furniture: "with assemble",
     other_rooms: [],
-    new_address: "karachi",
-    new_postal_code: "34564",
+    new_address: "",
+    new_postal_code: "",
     // new_living_area_length: 20,
     new_floor: 2,
     new_parking: "Yes",
@@ -123,8 +119,8 @@ const initialHouseModal = {
   ],
   data: {
     house_type: "detached_house",
-    address: "karachi",
-    postal_code: "34564",
+    address: "",
+    postal_code: "",
     living_area_length: 20,
     number_of_rooms: 2,
     parking: "Yes",
@@ -133,8 +129,8 @@ const initialHouseModal = {
     assembling_furniture: "with assemble",
     // floor: 2,
     other_rooms: [],
-    new_address: "karachi",
-    new_postal_code: "34564",
+    new_address: "",
+    new_postal_code: "",
     // new_living_area_length: 20,
     // new_floor: 2,
     new_parking: "Yes",
@@ -180,8 +176,8 @@ const initialOfficeModal = {
     FreeOfferOffice,
   ],
   data: {
-    address: "karachi",
-    postal_code: "34564",
+    address: "",
+    postal_code: "",
     office_area_length: 20,
     number_of_rooms: 2,
     floor: 2,
@@ -190,8 +186,8 @@ const initialOfficeModal = {
     elevator: "Yes",
     assembling_furniture: "with assemble",
     // other_rooms: [],
-    new_address: "karachi",
-    new_postal_code: "34564",
+    new_address: "",
+    new_postal_code: "",
     // new_office_area_length: 20,
     // new_floor: 2,
     new_parking: "Yes",
@@ -222,7 +218,7 @@ const Home = () => {
   return (
     <div className="w-screen h-screen bg-[url(/src/assets/images/home_background.jpg)] bg-center bg-cover bg-no-repeat">
       <div className="flex items-center justify-center w-full h-full bg-black/50">
-        <div className="w-full max-w-xl min-h-[250px] bg-gray-800/30 p-6 rounded-lg text-center">
+        <div className="w-full max-w-xl mx-4 min-h-[250px] bg-gray-800/30 p-6 rounded-lg text-center">
           <h2 className="text-xl font-semibold text-white capitalize">
             How much will my next move cost?
           </h2>
@@ -230,7 +226,7 @@ const Home = () => {
             Calculate online now for free and easily!
           </h2>
 
-          <div className="grid grid-cols-3 mt-8 gap-x-5">
+          <div className="grid grid-cols-1 min-[400px]:grid-cols-3 mt-8 gap-5">
             <div
               onClick={() =>
                 setApartmentsModal((prev) => ({ ...prev, isOpen: true }))
