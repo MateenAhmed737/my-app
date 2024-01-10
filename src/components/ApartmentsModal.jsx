@@ -1,32 +1,146 @@
 import React, { useState } from "react";
 import { VscClose } from "react-icons/vsc";
+import {
+  Address,
+  AssemblingFurniture,
+  Elevator,
+  LivingArea,
+  OtherRooms,
+  Parking,
+  ParkingDistance,
+  Rooms,
+  Stairs,
+  NewAddress,
+  // NewLivingArea,
+  // NewRooms,
+  NewStairs,
+  NewParking,
+  NewParkingDistance,
+  NewElevator,
+  NewAssemblingFurniture,
+  // NewOtherRooms,
+  FurtherServices,
+  FreeOffer,
+} from "./Apartments";
+
+const components = [
+  Address,
+  LivingArea,
+  Rooms,
+  Stairs,
+  Parking,
+  ParkingDistance,
+  Elevator,
+  AssemblingFurniture,
+  OtherRooms,
+  NewAddress,
+  // NewLivingArea,
+  NewStairs,
+  NewParking,
+  NewParkingDistance,
+  NewElevator,
+  NewAssemblingFurniture,
+  FurtherServices,
+  FreeOffer,
+];
+
+const apiParams = {
+  type: "type",
+  address: "address",
+  postal_code: "postal_code",
+  appartment_length: "appartment_length",
+  number_of_rooms: "rooms_number",
+  floor: 2,
+  parking: "Yes",
+  parking_distance: 1,
+  elevator: "Yes",
+  assembling_furniture: "with assemble",
+  other_rooms: [],
+  new_address: "",
+  new_postal_code: "",
+  // new_appartment_length: "",
+  new_floor: 2,
+  new_parking: "Yes",
+  // new_number_of_rooms: "",
+  new_parking_distance: 1,
+  new_elevator: "Yes",
+  new_assembling_furniture: "with assemble",
+  further_services: [],
+  details: {
+    title: "mister",
+    name: "",
+    email: "",
+    phone: "",
+    interview_appointment: "",
+    moving_date: "",
+    message: "",
+    terms: "",
+  },
+};
+
+const store_url = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
 
 const ApartmentsModal = ({ modal, setModal, initialIndex = 0 }) => {
+  const initialState = modal.data;
+  const [state, setState] = useState(initialState);
   const [curIndex, setCurIndex] = useState(initialIndex);
   const Component =
-    curIndex !== null && curIndex !== undefined && modal.components[curIndex];
+    curIndex !== null && curIndex !== undefined && components[curIndex];
 
   const close = () => {
     setModal({ ...modal, isOpen: false });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const isLast = curIndex === components.length - 1;
+    const keys = Object.keys(state);
 
-    // Check if the current form is the last form
-    if (curIndex === modal.components.length - 1) {
-      // If it is, close the modal
-      return close();
+    if (!isLast) {
+      return setCurIndex(curIndex + 1);
     }
 
-    setCurIndex(curIndex + 1);
+    try {
+      const formdata = new FormData();
+
+      keys.forEach((key) => {
+        if (key === "details") {
+          const details = state[key];
+          const detailParams = apiParams.details;
+
+          Object.keys(details).forEach((detailKey) => {
+            formdata.append(detailParams[detailKey], details[detailKey]);
+          });
+        } else {
+          formdata.append(apiParams[key], state[key]);
+        }
+      });
+
+      const requestOptions = {
+        method: "POST",
+        body: formdata,
+        headers: {
+          Accept: "application/json",
+        },
+        redirect: "follow",
+      };
+
+      const res = await fetch(store_url, requestOptions);
+      const data = await res.json();
+      console.log(data);
+
+      if (data.success) {
+        close();
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const componentProps = {
     handleSubmit,
-    state: modal.data,
-    setState: (key, value) =>
-      setModal((prev) => ({ ...prev, data: { ...prev.data, [key]: value } })),
+    state,
+    setState: (key, value) => setState((prev) => ({ ...prev, [key]: value })),
   };
 
   const styles = {
@@ -40,7 +154,7 @@ const ApartmentsModal = ({ modal, setModal, initialIndex = 0 }) => {
     header: "flex justify-between items-center py-3 px-4 border-b",
     main: {
       base: `p-4 pt-10 sm:pt-4 overflow-y-auto max-h-[70vh] min-h-[50vh] ${
-        curIndex !== modal?.components?.length - 1
+        curIndex !== components?.length - 1
           ? "flex justify-center items-center"
           : ""
       }`,
@@ -85,7 +199,7 @@ const ApartmentsModal = ({ modal, setModal, initialIndex = 0 }) => {
 
           {/* Dot indicators */}
           <div className="min-[450px]:flex">
-            {modal.components.map((_, index) => (
+            {components.map((_, index) => (
               <span
                 key={index}
                 className={`w-2 h-2 rounded-full mx-[1px] transition-all duration-300 ${
@@ -99,9 +213,9 @@ const ApartmentsModal = ({ modal, setModal, initialIndex = 0 }) => {
             type="submit"
             form="current-form"
             className="px-5 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-700 disabled:hover:bg-blue-500 disabled:saturate-0"
-            // disabled={curIndex === modal.components.length - 1}
+            // disabled={curIndex === components.length - 1}
           >
-            {curIndex === modal.components.length - 1 ? "Submit" : "Next"}
+            {curIndex === components.length - 1 ? "Submit" : "Next"}
           </button>
         </div>
       </div>

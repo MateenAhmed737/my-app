@@ -24,7 +24,7 @@ const Address = ({ handleSubmit, state, setState }) => {
           <div className="mt-8">
             <input
               type="text"
-              name="address"
+              name="new_address"
               value={state?.new_address}
               onChange={handleChange}
               className="w-full px-4 py-2 mt-2 text-xs text-gray-700 border rounded-md focus:border-gray-800 focus:outline-none"
@@ -33,7 +33,7 @@ const Address = ({ handleSubmit, state, setState }) => {
             />
             <input
               type="text"
-              name="postal_code"
+              name="new_postal_code"
               onChange={handleChange}
               value={state?.new_postal_code}
               className="w-full px-4 py-2 mt-2 text-xs text-gray-700 border rounded-md focus:border-gray-800 focus:outline-none"

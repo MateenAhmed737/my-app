@@ -30,7 +30,7 @@ const OfficeArea = ({ handleSubmit, state, setState }) => {
           <div className="mt-8 text-left">
             {/* a label */}
             <label
-              htmlFor="new_office_area_length"
+              htmlFor="new_office_length"
               className="text-xs font-semibold"
             >
               Length of the apartment in m²
@@ -39,12 +39,12 @@ const OfficeArea = ({ handleSubmit, state, setState }) => {
             <br />
 
             <span className="block w-full -mt-5 text-center">
-              {state?.new_office_area_length}
+              {state?.new_office_length}
             </span>
             <input
               type="range"
-              name="new_office_area_length"
-              value={state?.new_office_area_length}
+              name="new_office_length"
+              value={state?.new_office_length}
               onChange={handleChange}
               className="w-full px-4 py-2 -mt-2 text-xs text-gray-700 border rounded-md focus:border-gray-800 focus:outline-none"
               max={200}
