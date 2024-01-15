@@ -21,10 +21,10 @@ const Elevator = ({ handleSubmit, state, setState }) => {
           <div className="flex justify-center mt-8 space-x-4">
             <div
               onClick={() =>
-                handleChange({ target: { value: "Yes", name: "new_elevator" } })
+                handleChange({ target: { value: "available", name: "new_elevator" } })
               }
               className={`relative pb-7 pt-1 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.new_elevator === "Yes"
+                state.new_elevator === "available"
                   ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
@@ -33,9 +33,9 @@ const Elevator = ({ handleSubmit, state, setState }) => {
               <input
                 type="radio"
                 name="new_elevator"
-                value="Yes"
+                value="available"
                 onChange={handleChange}
-                checked={state.new_elevator === "Yes"}
+                checked={state.new_elevator === "available"}
                 className="hidden"
                 required
               />
@@ -52,10 +52,10 @@ const Elevator = ({ handleSubmit, state, setState }) => {
 
             <div
               onClick={() =>
-                handleChange({ target: { value: "No", name: "new_elevator" } })
+                handleChange({ target: { value: "unavailable", name: "new_elevator" } })
               }
               className={`relative pb-7 pt-1 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.new_elevator === "No"
+                state.new_elevator === "unavailable"
                   ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
@@ -64,9 +64,9 @@ const Elevator = ({ handleSubmit, state, setState }) => {
               <input
                 type="radio"
                 name="new_elevator"
-                value="No"
+                value="unavailable"
                 onChange={handleChange}
-                checked={state.new_elevator === "No"}
+                checked={state.new_elevator === "unavailable"}
                 className="hidden"
                 required
               />

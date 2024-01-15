@@ -21,10 +21,10 @@ const Parking = ({ handleSubmit, state, setState }) => {
           <div className="flex justify-center mt-8 space-x-4">
             <div
               onClick={() =>
-                handleChange({ target: { value: "Yes", name: "parking" } })
+                handleChange({ target: { value: "available", name: "parking" } })
               }
               className={`relative pb-1.5 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.parking === "Yes"
+                state.parking === "available"
                   ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
@@ -33,9 +33,9 @@ const Parking = ({ handleSubmit, state, setState }) => {
               <input
                 type="radio"
                 name="parking"
-                value="Yes"
+                value="available"
                 onChange={handleChange}
-                checked={state.parking === "Yes"}
+                checked={state.parking === "available"}
                 className="hidden"
                 required
               />
@@ -52,10 +52,10 @@ const Parking = ({ handleSubmit, state, setState }) => {
             {/* Another radio input and image for parking unavailable */}
             <div
               onClick={() =>
-                handleChange({ target: { value: "No", name: "parking" } })
+                handleChange({ target: { value: "unavailable", name: "parking" } })
               }
               className={`relative pb-1.5 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.parking === "No"
+                state.parking === "unavailable"
                   ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
@@ -64,9 +64,9 @@ const Parking = ({ handleSubmit, state, setState }) => {
               <input
                 type="radio"
                 name="parking"
-                value="No"
+                value="unavailable"
                 onChange={handleChange}
-                checked={state.parking === "No"}
+                checked={state.parking === "unavailable"}
                 className="hidden"
                 required
               />

@@ -27,13 +27,13 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
               onClick={() =>
                 handleChange({
                   target: {
-                    value: "with assemble",
+                    value: "With Assemble",
                     name: "assembling_furniture",
                   },
                 })
               }
               className={`relative pb-7 pt-1 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.assembling_furniture === "with assemble"
+                state.assembling_furniture === "With Assemble"
                   ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
@@ -42,9 +42,9 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
               <input
                 type="radio"
                 name="assembling_furniture"
-                value="with assemble"
+                value="With Assemble"
                 onChange={handleChange}
-                checked={state.assembling_furniture === "with assemble"}
+                checked={state.assembling_furniture === "With Assemble"}
                 className="hidden"
                 required
               />
@@ -63,13 +63,13 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
               onClick={() =>
                 handleChange({
                   target: {
-                    value: "without assemble",
+                    value: "Without Assemble",
                     name: "assembling_furniture",
                   },
                 })
               }
               className={`relative pb-7 pt-1 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.assembling_furniture === "without assemble"
+                state.assembling_furniture === "Without Assemble"
                   ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
@@ -78,9 +78,9 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
               <input
                 type="radio"
                 name="assembling_furniture"
-                value="without assemble"
+                value="Without Assemble"
                 onChange={handleChange}
-                checked={state.assembling_furniture === "without assemble"}
+                checked={state.assembling_furniture === "Without Assemble"}
                 className="hidden"
                 required
               />

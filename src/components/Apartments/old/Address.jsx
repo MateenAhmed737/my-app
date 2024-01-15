@@ -33,7 +33,7 @@ const Address = ({ handleSubmit, state, setState }) => {
               required
             />
             <input
-              type="text"
+              type="number"
               name="postal_code"
               onChange={handleChange}
               value={state?.postal_code}

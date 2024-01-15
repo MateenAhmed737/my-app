@@ -21,10 +21,10 @@ const Parking = ({ handleSubmit, state, setState }) => {
           <div className="flex justify-center mt-8 space-x-4">
             <div
               onClick={() =>
-                handleChange({ target: { value: "Yes", name: "new_parking" } })
+                handleChange({ target: { value: "available", name: "new_parking" } })
               }
               className={`relative pb-1.5 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.new_parking === "Yes"
+                state.new_parking === "available"
                   ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
@@ -33,9 +33,9 @@ const Parking = ({ handleSubmit, state, setState }) => {
               <input
                 type="radio"
                 name="new_parking"
-                value="Yes"
+                value="available"
                 onChange={handleChange}
-                checked={state.new_parking === "Yes"}
+                checked={state.new_parking === "available"}
                 className="hidden"
                 required
               />
@@ -52,10 +52,10 @@ const Parking = ({ handleSubmit, state, setState }) => {
             {/* Another radio input and image for parking unavailable */}
             <div
               onClick={() =>
-                handleChange({ target: { value: "No", name: "new_parking" } })
+                handleChange({ target: { value: "unavailable", name: "new_parking" } })
               }
               className={`relative pb-1.5 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.new_parking === "No"
+                state.new_parking === "unavailable"
                   ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
@@ -64,9 +64,9 @@ const Parking = ({ handleSubmit, state, setState }) => {
               <input
                 type="radio"
                 name="new_parking"
-                value="No"
+                value="unavailable"
                 onChange={handleChange}
-                checked={state.new_parking === "No"}
+                checked={state.new_parking === "unavailable"}
                 className="hidden"
                 required
               />

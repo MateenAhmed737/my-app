@@ -2,7 +2,9 @@ import React from "react";
 
 const FreeOffer = ({ handleSubmit, state, setState }) => {
   const handleChange = (e) => {
-    const newState = { ...state.details, [e.target.name]: e.target.value };
+    const name = e.target.name;
+    const value = e.target[name==="terms" ? "checked" : "value"];
+    const newState = { ...state.details, [name]: value };
 
     setState("details", newState);
   };
@@ -99,7 +101,7 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
             id="terms"
             name="terms"
             type="checkbox"
-            value={state.details.terms}
+            checked={state.details.terms}
             onChange={handleChange}
             required
           />

@@ -21,10 +21,10 @@ const HouseType = ({ handleSubmit, state, setState }) => {
           <div className="flex justify-center mt-8 space-x-4">
             <div
               onClick={() =>
-                handleChange({ target: { value: "detached_house", name: "house_type" } })
+                handleChange({ target: { value: "Detached House", name: "house_type" } })
               }
               className={`relative pt-1 px-4 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.house_type === "detached_house"
+                state.house_type === "Detached House"
                   ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
@@ -33,9 +33,9 @@ const HouseType = ({ handleSubmit, state, setState }) => {
               <input
                 type="radio"
                 name="house_type"
-                value="detached_house"
+                value="Detached House"
                 onChange={handleChange}
-                checked={state.house_type === "detached_house"}
+                checked={state.house_type === "Detached House"}
                 className="hidden"
                 required
               />
@@ -43,7 +43,7 @@ const HouseType = ({ handleSubmit, state, setState }) => {
               <img
                 className="w-full max-w-[100px]"
                 src={DetachedHouse}
-                alt="detached_house"
+                alt="Detached House"
               />
               <span className="absolute inset-x-0 bottom-0 inline-block w-full p-2 py-1 text-xs text-white bg-blue-700">
               Detached House
@@ -52,10 +52,10 @@ const HouseType = ({ handleSubmit, state, setState }) => {
 
             <div
               onClick={() =>
-                handleChange({ target: { value: "apartment_building", name: "house_type" } })
+                handleChange({ target: { value: "Apartment Building", name: "house_type" } })
               }
               className={`relative pt-1.5 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.house_type === "apartment_building"
+                state.house_type === "Apartment Building"
                   ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
@@ -64,9 +64,9 @@ const HouseType = ({ handleSubmit, state, setState }) => {
               <input
                 type="radio"
                 name="house_type"
-                value="apartment_building"
+                value="Apartment Building"
                 onChange={handleChange}
-                checked={state.house_type === "apartment_building"}
+                checked={state.house_type === "Apartment Building"}
                 className="hidden"
                 required
               />
@@ -74,7 +74,7 @@ const HouseType = ({ handleSubmit, state, setState }) => {
               <img
                 className="w-full max-w-[100px]"
                 src={ApartmentBuilding}
-                alt="apartment_building"
+                alt="Apartment Building"
               />
               <span className="absolute inset-x-0 bottom-0 inline-block w-full p-2 py-1 text-xs text-white bg-blue-700">
               Apartment Building
@@ -83,10 +83,10 @@ const HouseType = ({ handleSubmit, state, setState }) => {
             
             <div
               onClick={() =>
-                handleChange({ target: { value: "town_house", name: "house_type" } })
+                handleChange({ target: { value: "Town House", name: "house_type" } })
               }
               className={`relative px-1 pt-2 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.house_type === "town_house"
+                state.house_type === "Town House"
                   ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
@@ -95,9 +95,9 @@ const HouseType = ({ handleSubmit, state, setState }) => {
               <input
                 type="radio"
                 name="house_type"
-                value="town_house"
+                value="Town House"
                 onChange={handleChange}
-                checked={state.house_type === "town_house"}
+                checked={state.house_type === "Town House"}
                 className="hidden"
                 required
               />
@@ -105,7 +105,7 @@ const HouseType = ({ handleSubmit, state, setState }) => {
               <img
                 className="w-full max-w-[100px]"
                 src={TownHouse}
-                alt="town_house"
+                alt="Town House"
               />
               <span className="absolute inset-x-0 bottom-0 inline-block w-full p-2 py-1 text-xs text-white bg-blue-700">
               Town House
@@ -114,10 +114,10 @@ const HouseType = ({ handleSubmit, state, setState }) => {
             
             <div
               onClick={() =>
-                handleChange({ target: { value: "semidetached_house", name: "house_type" } })
+                handleChange({ target: { value: "Semidetached House", name: "house_type" } })
               }
               className={`relative pb-6 px-3 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.house_type === "semidetached_house"
+                state.house_type === "Semidetached House"
                   ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
@@ -126,9 +126,9 @@ const HouseType = ({ handleSubmit, state, setState }) => {
               <input
                 type="radio"
                 name="house_type"
-                value="semidetached_house"
+                value="Semidetached House"
                 onChange={handleChange}
-                checked={state.house_type === "semidetached_house"}
+                checked={state.house_type === "Semidetached House"}
                 className="hidden"
                 required
               />
@@ -136,7 +136,7 @@ const HouseType = ({ handleSubmit, state, setState }) => {
               <img
                 className="w-full max-w-[110px]"
                 src={SemiDetachedHouse}
-                alt="semidetached_house"
+                alt="Semidetached House"
               />
               <span className="absolute inset-x-0 bottom-0 inline-block w-full p-2 py-1 text-[10px] text-white bg-blue-700">
               Semi-Detached House

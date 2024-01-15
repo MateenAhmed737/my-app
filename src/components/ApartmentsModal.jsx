@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { VscClose } from "react-icons/vsc";
+import { base_url } from "../utils/url";
 import {
   Address,
   AssemblingFurniture,
@@ -22,6 +23,7 @@ import {
   FurtherServices,
   FreeOffer,
 } from "./Apartments";
+import { Button } from "./Button";
 
 const components = [
   Address,
@@ -50,55 +52,58 @@ const apiParams = {
   postal_code: "postal_code",
   appartment_length: "appartment_length",
   number_of_rooms: "rooms_number",
-  floor: 2,
-  parking: "Yes",
-  parking_distance: 1,
-  elevator: "Yes",
-  assembling_furniture: "with assemble",
-  other_rooms: [],
-  new_address: "",
-  new_postal_code: "",
+  floor: "floor_number",
+  parking: "parking_spaces",
+  parking_distance: "distance_parking_lot",
+  elevator: "elevator",
+  assembling_furniture: "assembling_furniture",
+  other_rooms: "other_rooms",
+  new_address: "new_address",
+  new_postal_code: "new_postal_code",
   // new_appartment_length: "",
-  new_floor: 2,
-  new_parking: "Yes",
+  new_floor: "new_floor_number",
+  new_parking: "new_parking",
   // new_number_of_rooms: "",
-  new_parking_distance: 1,
-  new_elevator: "Yes",
-  new_assembling_furniture: "with assemble",
-  further_services: [],
+  new_parking_distance: "new_distance_parking",
+  new_elevator: "new_elevator",
+  new_assembling_furniture: "new_assembling_furniture",
+  further_services: "further_services",
   details: {
-    title: "mister",
-    name: "",
-    email: "",
-    phone: "",
-    interview_appointment: "",
-    moving_date: "",
-    message: "",
-    terms: "",
+    title: "recive_offer",
+    name: "name",
+    email: "email",
+    phone: "phone",
+    interview_appointment: "interview_appointment",
+    moving_date: "moving_date",
+    message: "message",
+    terms: "terms_and_conditions",
   },
 };
 
-const store_url = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+const store_url = `${base_url}/store-data`;
 
 const ApartmentsModal = ({ modal, setModal, initialIndex = 0 }) => {
   const initialState = modal.data;
+  const [loading, setLoading] = useState(false);
   const [state, setState] = useState(initialState);
   const [curIndex, setCurIndex] = useState(initialIndex);
   const Component =
     curIndex !== null && curIndex !== undefined && components[curIndex];
+  const isLast = curIndex === components.length - 1;
 
   const close = () => {
-    setModal({ ...modal, isOpen: false });
+    setModal({ data: state, isOpen: false });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const isLast = curIndex === components.length - 1;
     const keys = Object.keys(state);
 
     if (!isLast) {
       return setCurIndex(curIndex + 1);
     }
+
+    setLoading(true);
 
     try {
       const formdata = new FormData();
@@ -110,9 +115,14 @@ const ApartmentsModal = ({ modal, setModal, initialIndex = 0 }) => {
 
           Object.keys(details).forEach((detailKey) => {
             formdata.append(detailParams[detailKey], details[detailKey]);
+            console.log(detailParams[detailKey], details[detailKey]);
           });
+        } else if (Array.isArray(state[key])) {
+          formdata.append(apiParams[key], JSON.stringify(state[key]));
+          console.log(apiParams[key], JSON.stringify(state[key]));
         } else {
           formdata.append(apiParams[key], state[key]);
+          console.log(apiParams[key], state[key]);
         }
       });
 
@@ -127,13 +137,16 @@ const ApartmentsModal = ({ modal, setModal, initialIndex = 0 }) => {
 
       const res = await fetch(store_url, requestOptions);
       const data = await res.json();
-      console.log(data);
+      console.log("res ==>", data);
 
       if (data.success) {
         close();
+        alert(data.success.message);
       }
     } catch (error) {
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -188,14 +201,11 @@ const ApartmentsModal = ({ modal, setModal, initialIndex = 0 }) => {
 
         <div className={styles.footer}>
           {/* Styled Prev and Next Buttons */}
-          <button
-            type="button"
-            className="px-5 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-700 disabled:hover:bg-blue-500 disabled:saturate-0"
+          <Button
+            title="Back"
             onClick={() => setCurIndex(curIndex - 1)}
-            disabled={curIndex === 0}
-          >
-            Back
-          </button>
+            disabled={loading || curIndex === 0}
+          />
 
           {/* Dot indicators */}
           <div className="min-[450px]:flex">
@@ -209,14 +219,18 @@ const ApartmentsModal = ({ modal, setModal, initialIndex = 0 }) => {
             ))}
           </div>
 
-          <button
+          <Button
             type="submit"
+            title={
+              isLast && loading
+                ? "Submitting..."
+                : isLast && !loading
+                ? "Submit"
+                : "Next"
+            }
+            disabled={loading}
             form="current-form"
-            className="px-5 py-2 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-700 disabled:hover:bg-blue-500 disabled:saturate-0"
-            // disabled={curIndex === components.length - 1}
-          >
-            {curIndex === components.length - 1 ? "Submit" : "Next"}
-          </button>
+          />
         </div>
       </div>
     </div>
