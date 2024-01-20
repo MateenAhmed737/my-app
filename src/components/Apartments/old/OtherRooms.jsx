@@ -12,12 +12,12 @@ const OtherRooms = ({ handleSubmit, state, setState }) => {
   };
 
   const checkboxes = [
-    "Garage/carport",
-    "basement, cellar",
-    "attic",
-    "screed",
-    "hobby room",
-    "Other",
+    "Garage/Carport",
+    "Keller",
+    "Dachboden",
+    "Estrich",
+    "Hobbyraum",
+    "Andere",
   ];
 
   return (
@@ -32,10 +32,12 @@ const OtherRooms = ({ handleSubmit, state, setState }) => {
       <div className="flex justify-center sm:w-8/12">
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg whitespace-nowrap">
-            Are there other{" "}
-            <span className="font-semibold text-blue-700">rooms?</span>
+            Gibt es weitere{" "}
+            <span className="font-semibold text-blue-700">Räume ?</span>
           </h2>
-          <h2 className="mt-3 text-xs font-normal">Add more rooms.</h2>
+          <h2 className="mt-3 text-xs font-normal">
+            Weitere Räume hinzufügen.
+          </h2>
 
           <div className="mt-5">
             {/* Checkboxes */}

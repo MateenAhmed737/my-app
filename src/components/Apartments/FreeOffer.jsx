@@ -9,7 +9,7 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
     setState("details", newState);
   };
 
-  const radioBtns = ["mister", "woman", "family", "company"];
+  const radioBtns = ["Herr", "Frau", "Familie", "Firma"];
   const fields = [
     "name",
     "email",
@@ -17,14 +17,21 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
     "interview_appointment",
     "moving_date",
   ];
+  const fieldTitles = {
+    name: "Vorname/Nachname",
+    email: "E-Mail",
+    phone: "Telefon",
+    interview_appointment: "Gesprächstermin",
+    moving_date: "Umzugstermin",
+  };
 
   return (
     <div className="flex justify-center w-full">
       <form onSubmit={handleSubmit} className="w-full" id="current-form">
         <h2 className="text-lg font-semibold text-blue-700 whitespace-nowrap">
-          Free Offer
+          Kostenloses Angebot
         </h2>
-        <h2 className="text-xs font-normal">Who can receive the offer?</h2>
+        <h2 className="text-xs font-normal">Wer darf das Angebot erhalten?</h2>
 
         {/* Radio Buttons */}
         <div className="flex flex-wrap items-center w-full my-3 mt-5 space-x-4">
@@ -71,7 +78,7 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
                   htmlFor={item}
                   className="mb-1 text-xs font-medium text-left text-gray-500 capitalize"
                 >
-                  {item.replaceAll("_", " ")}
+                  {fieldTitles[item]}
                 </label>
                 <input
                   type={type}
@@ -92,7 +99,7 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
             onChange={handleChange}
             value={state.details.message}
             className="col-span-1 sm:col-span-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 py-2"
-            placeholder="Message"
+            placeholder="Nachricht"
           ></textarea>
         </div>
 
@@ -109,8 +116,9 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
             htmlFor="terms"
             className="relative text-xs font-medium text-gray-500 capitalize -top-1"
           >
-            I agree that my details from the contact form will be collected and
-            processed to answer my query. Call up data protection declaration .
+            Ich stimme zu, dass meine Angaben aus dem Kontaktformular zur
+            Beantwortung meiner Anfrage erhoben und verarbeitet werden.
+            Datenschutzerklärung aufrufen.
           </label>
         </div>
       </form>

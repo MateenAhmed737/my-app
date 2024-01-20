@@ -18,15 +18,19 @@ const Stairs = ({ handleSubmit, state, setState }) => {
       <div className="mt-5 sm:w-7/12">
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg whitespace-nowrap">
-            <span className="font-semibold text-blue-700">Which floor</span> do
-            you live on?
+            <span className="font-semibold text-blue-700">
+              In welchem Stockwer{" "}
+            </span>{" "}
+            wohnen Sie ?
           </h2>
-          <h2 className="mt-3 text-xs font-normal">Please select a floor.</h2>
+          <h2 className="mt-3 text-xs font-normal">
+            Bitte wählen Sie ein Stockwerk aus.
+          </h2>
 
           <div className="mt-8 text-left">
             {/* a label */}
             <label htmlFor="floor" className="text-xs font-semibold">
-              Floor number
+              Etage Nummer
             </label>
             <br />
             <br />

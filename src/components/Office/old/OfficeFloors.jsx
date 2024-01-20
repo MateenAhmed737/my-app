@@ -10,25 +10,27 @@ const Stairs = ({ handleSubmit, state, setState }) => {
     <div className="flex flex-col items-center sm:flex-row min-h-max">
       <div className="self-center h-full sm:w-5/12 justify-self-center">
         <img
-          className="w-full max-w-[120px] mr-10 mt-2"
+          className="w-full max-w-[120px] mt-2"
           src={StairsImg}
           alt="stairs"
         />
       </div>
       <div className="mt-5 sm:w-7/12">
         <form onSubmit={handleSubmit} id="current-form">
-          <h2 className="text-lg whitespace-nowrap">
-            Which floor{" "}
+          <h2 className="text-lg">
+            Im welchen Stock{" "}
             <span className="font-semibold text-blue-700">
-              is the office on?
+              befindet sich das Büro ?
             </span>
           </h2>
-          <h2 className="mt-3 text-xs font-normal">Please select a floor.</h2>
+          <h2 className="mt-3 text-xs font-normal">
+            Bitte nennen Sie uns Ihren Stockwerk.
+          </h2>
 
           <div className="mt-8 text-left">
             {/* a label */}
             <label htmlFor="floor" className="text-xs font-semibold">
-              Floor number
+              Etage Nummer
             </label>
             <br />
             <br />

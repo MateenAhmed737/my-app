@@ -11,17 +11,21 @@ const Parking = ({ handleSubmit, state, setState }) => {
       <div className="mt-5">
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg whitespace-nowrap">
-            Are there free{" "}
+            Sind freie{" "}
             <span className="font-semibold text-blue-700">
-              parking spaces available?
+              Parkplätze vorhanden ?
             </span>
           </h2>
-          <h2 className="mt-3 text-xs font-normal">Please choose an option.</h2>
+          <h2 className="mt-3 text-xs font-normal">
+            Bitte wählen Sie eine Option.
+          </h2>
 
           <div className="flex justify-center mt-8 space-x-4">
             <div
               onClick={() =>
-                handleChange({ target: { value: "available", name: "new_parking" } })
+                handleChange({
+                  target: { value: "available", name: "new_parking" },
+                })
               }
               className={`relative pb-1.5 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
                 state.new_parking === "available"
@@ -46,13 +50,15 @@ const Parking = ({ handleSubmit, state, setState }) => {
                 alt="parking-available"
               />
               <span className="absolute inset-x-0 bottom-0 inline-block w-full p-2 py-1 text-xs text-white bg-blue-700">
-                Parking Available
+                Vorhanden
               </span>
             </div>
             {/* Another radio input and image for parking unavailable */}
             <div
               onClick={() =>
-                handleChange({ target: { value: "unavailable", name: "new_parking" } })
+                handleChange({
+                  target: { value: "unavailable", name: "new_parking" },
+                })
               }
               className={`relative pb-1.5 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
                 state.new_parking === "unavailable"
@@ -77,7 +83,7 @@ const Parking = ({ handleSubmit, state, setState }) => {
                 alt="parking-unavailable"
               />
               <span className="absolute inset-x-0 bottom-0 inline-block w-full p-2 py-1 text-xs text-white bg-blue-700">
-                Parking Unavailable
+                Nicht Vorhanden
               </span>
             </div>
           </div>

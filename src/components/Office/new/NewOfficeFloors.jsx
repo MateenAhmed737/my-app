@@ -18,19 +18,19 @@ const NewOfficeFloors = ({ handleSubmit, state, setState }) => {
       <div className="mt-5 sm:w-8/12">
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg">
-            Which floor{" "}
+            Im welchen Stock{" "}
             <span className="font-semibold text-blue-700">
-              is new office on?
+              befindet sich das neue Büro ?
             </span>
           </h2>
           <h2 className="mt-3 text-xs font-normal">
-            This is your move in!
+            Es handelt sich hier um Ihren Einzug!
           </h2>
 
           <div className="mt-8 text-left">
             {/* a label */}
             <label htmlFor="new_floor" className="text-xs font-semibold">
-              New office, floor number.
+              Neue Büroetage Nr.
             </label>
             <br />
             <br />

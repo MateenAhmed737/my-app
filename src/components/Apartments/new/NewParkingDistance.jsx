@@ -18,13 +18,13 @@ const ParkingDistance = ({ handleSubmit, state, setState }) => {
       <div className="mt-5 sm:w-8/12">
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg">
-            Distance from the parking lot{" "}
+            Distanz vom Parkplatz{" "}
             <span className="font-semibold text-blue-700">
-              to the entrance to the house?
+              zum Hauseingang ?
             </span>
           </h2>
           <h2 className="mt-3 text-xs font-normal">
-            Please estimate the distance (new address)
+            Schätzen Sie bitte die Entfernung (einzüge Adresse)
           </h2>
 
           <div className="mt-8 text-left">
@@ -33,8 +33,7 @@ const ParkingDistance = ({ handleSubmit, state, setState }) => {
               htmlFor="new_parking_distance"
               className="text-xs font-semibold"
             >
-              Distance between the truck parking lot and the house entrance in
-              meters
+              Entfernung zwischen dem LKW-Parkplatz und Hauseingang in metern
             </label>
             <br />
             <br />

@@ -14,11 +14,11 @@ const Address = ({ handleSubmit, state, setState }) => {
       <div className="sm:w-7/12">
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg whitespace-nowrap">
-            What is your{" "}
-            <span className="font-semibold text-blue-700">new address</span> ?
+            Wie lautet Ihre{" "}
+            <span className="font-semibold text-blue-700">Neue Adresse</span> ?
           </h2>
           <h2 className="mt-3 text-xs font-normal">
-            Please enter an address (unloading point).
+            Bitte geben Sie eine Adresse (Beladestelle) ein.
           </h2>
 
           <div className="mt-8">
@@ -28,7 +28,7 @@ const Address = ({ handleSubmit, state, setState }) => {
               value={state?.new_address}
               onChange={handleChange}
               className="w-full px-4 py-2 mt-2 text-xs text-gray-700 border rounded-md focus:border-gray-800 focus:outline-none"
-              placeholder="Street, house number"
+              placeholder="Straße / Hausnummer"
               required
             />
             <input
@@ -37,7 +37,7 @@ const Address = ({ handleSubmit, state, setState }) => {
               onChange={handleChange}
               value={state?.new_postal_code}
               className="w-full px-4 py-2 mt-2 text-xs text-gray-700 border rounded-md focus:border-gray-800 focus:outline-none"
-              placeholder="Postal code"
+              placeholder="Postleitzahl"
               required
             />
           </div>

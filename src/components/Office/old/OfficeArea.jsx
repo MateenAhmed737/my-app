@@ -18,17 +18,17 @@ const OfficeArea = ({ handleSubmit, state, setState }) => {
       <div className="mx-auto mt-5 sm:w-8/12">
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg">
-            Tell us your{" "}
-            <span className="font-semibold text-blue-700">office space?</span>
+            Nennen Sie uns Ihre{" "}
+            <span className="font-semibold text-blue-700">Bürofläsche</span>
           </h2>
           <h2 className="mt-3 text-xs font-normal">
-            Estimate the size of the office space.
+            Schätzen Sie die Größe der Bürofläsche.
           </h2>
 
           <div className="mt-8 text-left">
             {/* a label */}
             <label htmlFor="office_length" className="text-xs font-semibold">
-              Office length in sqm
+              Bürolänge in qm
             </label>
             <br />
             <br />

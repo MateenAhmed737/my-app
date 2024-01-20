@@ -12,13 +12,13 @@ const FurtherServices = ({ handleSubmit, state, setState }) => {
   };
 
   const checkboxes = [
-    "Final cleaning including acceptance guarantee",
-    "Disposal/clearance",
-    "Intermediate storage",
-    "Moving boxes rental",
-    "Piano available",
-    "Furniture lift desired",
-    "Other",
+    "Endreinigung inkl. Abnahmegarantie",
+    "Entsorgung/Räumung",
+    "Zwischenlagerung",
+    "Umzugkartons Leihe",
+    "Klavier vorhanden",
+    "Möbellift gewünscht",
+    "Andere",
   ];
 
   return (
@@ -33,10 +33,14 @@ const FurtherServices = ({ handleSubmit, state, setState }) => {
       <div className="flex justify-center sm:w-8/12">
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg whitespace-nowrap">
-            Do you need further{" "}
-            <span className="font-semibold text-blue-700">services?</span>
+            Benötigen Sie weitere{" "}
+            <span className="font-semibold text-blue-700">
+              Dienstleistungen?
+            </span>
           </h2>
-          <h2 className="mt-3 text-xs font-normal">Add more services.</h2>
+          <h2 className="mt-3 text-xs font-normal">
+            Weitere Dienstleistungen hinzufügen.
+          </h2>
 
           <div className="mt-5">
             {/* Checkboxes */}

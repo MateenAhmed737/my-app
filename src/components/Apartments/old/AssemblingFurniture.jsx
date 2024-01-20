@@ -15,12 +15,12 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
       <div className="mt-5">
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg whitespace-nowrap">
-            Do you need help{" "}
-            <span className="font-semibold text-blue-700">
-              assembling furniture?
-            </span>
+            Benötigen Sie Hilfe bei der{" "}
+            <span className="font-semibold text-blue-700">Möbelmontage ?</span>
           </h2>
-          <h2 className="mt-3 text-xs font-normal">Please choose an option.</h2>
+          <h2 className="mt-3 text-xs font-normal">
+            Bitte wählen Sie eine Option.
+          </h2>
 
           <div className="flex justify-center mt-8 space-x-4">
             <div
@@ -55,7 +55,7 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
                 alt="with-assemble"
               />
               <span className="absolute inset-x-0 bottom-0 inline-block w-full p-2 py-1 text-xs text-white bg-blue-700">
-                With Assemble
+                Mit Möbelmontage
               </span>
             </div>
 
@@ -91,7 +91,7 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
                 alt="without-assemble"
               />
               <span className="absolute inset-x-0 bottom-0 inline-block w-full p-2 py-1 text-xs text-white bg-blue-700">
-                Without Assemble
+                Ohne Möbelmontage
               </span>
             </div>
 
@@ -124,7 +124,7 @@ const AssemblingFurniture = ({ handleSubmit, state, setState }) => {
                 alt="partialy"
               />
               <span className="absolute inset-x-0 bottom-0 inline-block w-full p-2 py-1 text-xs text-white bg-blue-700">
-                Partialy
+                Teilwesie
               </span>
             </div>
           </div>

@@ -14,17 +14,16 @@ const OfficeRooms = ({ handleSubmit, state, setState }) => {
       <div className="mx-auto mt-5 sm:w-8/12">
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg">
-            How many <span className="font-semibold text-blue-700">office spaces</span>{" "}
-            are there?
+            Wie viele{" "}
+            <span className="font-semibold text-blue-700">Büroräume</span> sind
+            es ?
           </h2>
-          <h2 className="mt-3 text-xs font-normal">
-            Number of spaces.
-          </h2>
+          <h2 className="mt-3 text-xs font-normal">Anzahl der Büroräume.</h2>
 
           <div className="mt-8 text-left">
             {/* a label */}
             <label htmlFor="number_of_rooms" className="text-xs font-semibold">
-              Number of rooms
+              Anzahl der Räume
             </label>
             <br />
             <br />

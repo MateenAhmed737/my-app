@@ -144,7 +144,8 @@ const HouseModal = ({ modal, setModal, initialIndex = 0 }) => {
       console.log("res ==>", data);
 
       if (data.success) {
-        close();
+        setState(initialState);
+        setModal((prev) => ({ ...prev, isOpen: false }));
         alert(data.success.message);
       }
     } catch (error) {
@@ -206,7 +207,7 @@ const HouseModal = ({ modal, setModal, initialIndex = 0 }) => {
         <div className={styles.footer}>
           {/* Styled Prev and Next Buttons */}
           <Button
-            title="Back"
+            title="Zurück"
             onClick={() => setCurIndex(curIndex - 1)}
             disabled={loading || curIndex === 0}
           />
@@ -227,10 +228,10 @@ const HouseModal = ({ modal, setModal, initialIndex = 0 }) => {
             type="submit"
             title={
               isLast && loading
-                ? "Submitting..."
+                ? "Einreichen..."
                 : isLast && !loading
-                ? "Submit"
-                : "Next"
+                ? "Einreichen"
+                : "Weiter"
             }
             disabled={loading}
             form="current-form"

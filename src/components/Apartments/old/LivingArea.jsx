@@ -18,13 +18,13 @@ const LivingArea = ({ handleSubmit, state, setState }) => {
       <div className="mt-5 sm:w-8/12">
         <form onSubmit={handleSubmit} id="current-form">
           <h2 className="text-lg">
-            How big is the{" "}
-            <span className="font-semibold text-blue-700">living area</span> of
-            the apartment ?
+            Wie groß ist die{" "}
+            <span className="font-semibold text-blue-700">Wohnfläche</span> der
+            Wohnung?
           </h2>
           <h2 className="mt-3 text-xs font-normal">
-            The living area refers to the sum of the eligible floor areas the
-            rooms that belong exclusively to an apartment.
+            Die Wohnfläche bezeichnet die Summe der anrechenbaren Grundflächen
+            der Räume, die ausschließlich zu einer Wohnung gehören.
           </h2>
 
           <div className="mt-8 text-left">
@@ -33,7 +33,7 @@ const LivingArea = ({ handleSubmit, state, setState }) => {
               htmlFor="appartment_length"
               className="text-xs font-semibold"
             >
-              Length of the apartment in m²
+              Länge der Wohnung in m²
             </label>
             <br />
             <br />

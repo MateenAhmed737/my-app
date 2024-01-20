@@ -127,10 +127,10 @@ const Home = () => {
       <div className="flex items-center justify-center w-full h-full bg-black/50">
         <div className="w-full max-w-xl mx-4 min-h-[250px] bg-gray-800/30 p-6 rounded-lg text-center">
           <h2 className="text-xl font-semibold text-white capitalize">
-            How much will my next move cost?
+            Was kostet mein nächster Umzug ?
           </h2>
           <h2 className="mt-3 text-xs font-normal text-white">
-            Calculate online now for free and easily!
+            Jetzt kostenlos und einfach online berechnen!
           </h2>
 
           <div className="grid grid-cols-1 min-[400px]:grid-cols-3 mt-8 gap-5">
@@ -143,7 +143,7 @@ const Home = () => {
               <BsBuildings className="text-5xl" />
 
               <button className="bg-gray-500/40 hover:text-red-700 hover:bg-white py-2 px-3.5 text-base rounded-md transition-all duration-300">
-                Apartment
+                Wohnung
               </button>
             </div>
 
@@ -156,7 +156,7 @@ const Home = () => {
               <FaHome className="text-5xl" />
 
               <button className="bg-gray-500/40 hover:text-red-700 hover:bg-white py-2 px-3.5 text-base rounded-md transition-all duration-300">
-                House
+                Haus
               </button>
             </div>
 
@@ -169,7 +169,7 @@ const Home = () => {
               <HiOfficeBuilding className="text-5xl" />
 
               <button className="bg-gray-500/40 hover:text-red-700 hover:bg-white py-2 px-3.5 text-base rounded-md transition-all duration-300">
-                Office
+                Büro
               </button>
             </div>
           </div>
