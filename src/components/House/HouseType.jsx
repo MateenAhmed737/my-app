@@ -126,11 +126,11 @@ const HouseType = ({ handleSubmit, state, setState }) => {
             <div
               onClick={() =>
                 handleChange({
-                  target: { value: "Semidetached House", name: "house_type" },
+                  target: { value: "Semi-Detached House", name: "house_type" },
                 })
               }
               className={`relative pb-6 px-1.5 cursor-pointer ring-2 ring-transparent hover:ring-gray-300 ${
-                state.house_type === "Semidetached House"
+                state.house_type === "Semi-Detached House"
                   ? "hover:!ring-gray-500 !ring-gray-500"
                   : ""
               }`}
@@ -139,9 +139,9 @@ const HouseType = ({ handleSubmit, state, setState }) => {
               <input
                 type="radio"
                 name="house_type"
-                value="Semidetached House"
+                value="Semi-Detached House"
                 onChange={handleChange}
-                checked={state.house_type === "Semidetached House"}
+                checked={state.house_type === "Semi-Detached House"}
                 className="hidden"
                 required
               />
@@ -149,7 +149,7 @@ const HouseType = ({ handleSubmit, state, setState }) => {
               <img
                 className="w-full max-w-[110px]"
                 src={SemiDetachedHouse}
-                alt="Semidetached House"
+                alt="Semi-Detached House"
               />
               <span className="absolute inset-x-0 bottom-0 inline-block w-full p-2 py-1 text-[10px] text-white bg-blue-700">
                 Doppelhaushälfte
