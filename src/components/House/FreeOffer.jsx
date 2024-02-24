@@ -15,6 +15,7 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
     "email",
     "phone",
     "interview_appointment",
+    "interview_time",
     "moving_date",
   ];
   const fieldTitles = {
@@ -22,6 +23,7 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
     email: "E-Mail",
     phone: "Telefon",
     interview_appointment: "Gesprächstermin",
+    interview_time: "Interviewzeit",
     moving_date: "Umzugstermin",
   };
 
@@ -60,20 +62,17 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
         <div className="grid grid-cols-1 space-y-2 sm:grid-cols-2 gap-x-4 gap-y-2">
           {fields.map((item, index) => {
             const type = item.includes("email")
-              ? "email"
-              : item.includes("phone")
-              ? "tel"
-              : item.includes("date") || item.includes("appointment")
-              ? "date"
-              : "text";
+            ? "email"
+            : item.includes("phone")
+            ? "tel"
+            : item.includes("time")
+            ? "time"
+            : item.includes("date") || item.includes("appointment")
+            ? "date"
+            : "text";
 
             return (
-              <div
-                key={item + index}
-                className={`flex flex-col ${
-                  item.includes("date") ? "col-span-1 sm:col-span-2" : ""
-                }`}
-              >
+              <div key={item + index} className="flex flex-col">
                 <label
                   htmlFor={item}
                   className="mb-1 text-xs font-medium text-left text-gray-500 capitalize"

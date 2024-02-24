@@ -15,6 +15,7 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
     "email",
     "phone",
     "interview_appointment",
+    "interview_time",
     "moving_date",
   ];
   const fieldTitles = {
@@ -22,6 +23,7 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
     email: "E-Mail",
     phone: "Telefon",
     interview_appointment: "Gesprächstermin",
+    interview_time: "Interviewzeit",
     moving_date: "Umzugstermin",
   };
 
@@ -29,7 +31,7 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
     <div className="flex justify-center w-full">
       <form onSubmit={handleSubmit} className="w-full" id="current-form">
         <h2 className="text-lg font-semibold text-blue-700 whitespace-nowrap">
-        Kostenloses Angebot
+          Kostenloses Angebot
         </h2>
         <h2 className="text-xs font-normal">Wer darf das Angebot erhalten?</h2>
 
@@ -63,17 +65,14 @@ const FreeOffer = ({ handleSubmit, state, setState }) => {
               ? "email"
               : item.includes("phone")
               ? "tel"
+              : item.includes("time")
+              ? "time"
               : item.includes("date") || item.includes("appointment")
               ? "date"
               : "text";
 
             return (
-              <div
-                key={item + index}
-                className={`flex flex-col ${
-                  item.includes("date") ? "col-span-1 sm:col-span-2" : ""
-                }`}
-              >
+              <div key={item + index} className="flex flex-col">
                 <label
                   htmlFor={item}
                   className="mb-1 text-xs font-medium text-left text-gray-500 capitalize"
